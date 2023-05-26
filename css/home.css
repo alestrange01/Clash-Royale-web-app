@@ -1,0 +1,207 @@
+body{
+    margin: 0px;
+}
+
+.background{
+    background-color: #ced4df;
+}
+
+.hidden{
+    display: none !important;
+}
+
+
+
+
+#sopra{
+    background-image: url(../assets/sfondo.png);
+    background-size: cover;
+    height: 25rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    z-index: -2;
+    position: relative;
+    color: white;
+    margin-bottom: 50px;
+    transition: height 1s ease;
+
+}
+
+
+
+#overlay{
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#benvenuto{
+    font-size: calc(25px + 1vw);
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.menu-element{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+
+.menu-element .text{
+    font-size: calc(14px + 0.5vw);
+    width: 60%;
+}
+
+.menu-element img{
+    width: 20%;
+    height: 20%;
+}
+
+
+
+
+button.registration a {
+    text-decoration: none;
+    color: #0044a0;
+}
+#menu button:hover a{
+    color:#fff
+  }
+
+button.registration  {
+    font-size: calc(10px + 0.5vw);
+    position: relative;
+    padding: 0.5rem 1rem;
+    margin: 40px 0px;
+    border-radius: 1rem;
+    border: 1px solid #0044a0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    color: #0044a0;
+    text-align: center;
+    line-height: 0.25rem;
+  }
+
+
+
+  
+ button.registration:hover {
+    background: #0044a0;
+    box-shadow: 0 0 30px 5px #0044a0;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    color: white;
+  }
+  
+ button.registration:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+ button.registration::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+ button.registration:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+
+
+
+  @media (max-width: 800px){
+    #sopra{
+      height: 35%;
+    }
+  }
+
+
+@media (max-width: 580px) {
+    
+   .menu-element{
+        flex-direction: column;
+   }
+    .menu-element .text{
+         width: 90%;
+        margin-bottom: 15px;
+    }
+   .menu-element img{
+       width: 50%;
+       height: 50%;
+    }
+
+    #benvenuto{
+        font-size: 1.5rem !important;
+    }
+
+    #sopra{
+      height: 25%;
+    }
+
+    #sopra p{
+        font-size: 1.5rem !important;
+    }
+    
+}
+
+
+
+
+
+
+

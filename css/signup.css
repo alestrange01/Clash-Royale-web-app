@@ -1,0 +1,224 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+#logo{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 90%;
+	margin-top: 20px;
+}
+
+#logotitle{
+	font-family: 'Oxygen', sans-serif;
+	font-size: calc(35px + 1vw);
+	margin: 10px 0;
+	text-align: center;
+	color: rgb(42, 38, 38);
+}
+#logosubtitle{
+	font-family: 'Work Sans', sans-serif;
+	font-size: calc(10px + 0.5vw);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: red;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.error_input{
+  border: 1px solid red !important;
+  border-radius: 10px !important;
+  color: red !important;
+}
+
+
+.form-box {
+    max-width: 300px;
+    background: #f1f7fe;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+  }
+  
+  .form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    text-align: center;
+  }
+  
+  /*Form text*/
+  .title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .form a{
+    text-decoration: none;
+    color: #666;
+  }
+  .form a:hover{
+    text-decoration: underline;
+  }
+  
+  /*Inputs box*/
+  .form-container {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+  }
+  
+  .input {
+    background: none;
+    border: 0;
+    outline: 0;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    font-size: .9rem;
+    padding: 8px 15px;
+  }
+  
+  .form-section {
+    padding: 16px;
+    font-size: .85rem;
+    background-color: #e0ecfb;
+    box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+  }
+  
+  .form-section a,
+  .form p a {
+    font-weight: bold;
+    color: #0066ff;
+    transition: color .3s ease;
+  }
+  
+  .form-section a:hover ,
+  .form p a:hover{
+    color: #005ce6;
+    text-decoration: underline;
+  }
+  
+  /*Button*/
+  #submit {
+    background-color: #0044a0;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+  }
+  
+  #submit:hover {
+    background-color: #005ce6;
+  }
+
+  /* .form p{
+    margin-top: -4px;
+    margin-bottom: -26px;
+  } */
+
+#how-to-player-tag{
+  margin-top: 15px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.2) 100%);
+  padding: 1rem 0;
+}
+
+
+
+
+#how-to-player-tag .taghowto{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+  /* background-color: #e6e5e5;  */
+  padding: 1rem;  
+}
+
+#how-to-player-tag .tagtitle,
+.box p{
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  font-family: 'Source Sans Pro','Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-weight: 600;
+}
+
+.box img{
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 1rem;
+}
+
+@media(max-width: 500px){
+  .box{
+    width: 100%;
+  }
+  .box img{
+    width: 70%;
+  }
+  #how-to-player-tag .taghowto{
+    flex-direction: column;
+  }
+}
+
+.errors{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: -20px; */
+}
+
+.error span{
+  color: red;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.error img{
+  width: 6%;
+  height: 6%;
+}

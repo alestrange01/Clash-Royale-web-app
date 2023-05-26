@@ -1,0 +1,172 @@
+.infoMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#error{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: calc(13px + 0.5vw);
+}
+
+#playerInfo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.trophy{
+    width: 25px;
+    height: 20px;
+    margin-bottom: -5px;
+}
+
+
+
+#name{
+    margin-top: 10px;
+    font-size: calc(10px + 1.5vw);
+    font-weight: bold;
+}
+
+#description{
+    text-align: center;
+    max-width: 60%;
+}
+
+.info{
+    font-size: calc(7px + 1vw);
+}
+
+.playerSearch{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.playerSearch:hover{
+    text-decoration: underline;
+}
+
+
+.statsTitle{
+    width: 100%;
+    text-align: left;
+    font-size: calc(10px + 1vw);
+    color: rgba(0,0,0,.87);
+    font-family: 'Source Sans Pro','Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-weight: 450;
+    margin-left: 30px;
+}
+#badges{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#badges img{
+    width: 22.5%;
+    height: 10%;
+    /* margin: 10px; */
+}
+
+#mostUsedCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#mostUsedCard span{
+    font-size: calc(10px + 1vw);
+}
+#mostUsedCard div{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardinfoimg{
+    margin-bottom: -3px;
+}
+
+
+
+
+#upcomingChests,
+#members{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0px 5px 0px 5px; /*top right bottom left*/
+}
+#upcomingChests div,
+#members div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#upcomingChests span{
+    font-size: calc(9px + 0.5vw);
+}
+
+#upcomingChests img{
+    width: 80%;
+    height: 20%;
+    margin: 6px;
+}
+
+
+
+
+
+@media (max-width: 800px){
+    #mostUsedCard > img{
+        width: 75%;
+        height: 75%;
+    }
+
+    #name{
+        font-size: calc(15px + 1.5vw);
+    }
+
+    .info{
+        font-size: calc(10px + 1vw);
+    }
+
+}
+
+@media (max-width: 550px) {
+    #menuPlayer{
+        width: 95%;
+    }
+
+    #badges img{
+        width: 25%;
+    }
+
+    #mostUsedCard > img{
+        width: 50%;
+        height: 50%;
+    }
+
+
+    #upcomingChests img{
+        width: 50%;
+        margin: 6px;
+    }
+
+    
+}

@@ -1,0 +1,80 @@
+/*Loader CSS*/
+#loading {
+    color: rgb(124, 124, 124);
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    margin-bottom: 30px;
+
+  }
+
+  
+  .words {
+    overflow: hidden;
+  }
+  
+  .word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #e20d0d;
+    -webkit-animation: spin 3s infinite;
+            animation: spin 3s infinite;
+  }
+  @keyframes spin {
+    0% {
+        -webkit-transform: translateY(-5%);
+        transform: translateY(-5%);
+    }
+  
+    12.5% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+  
+    25% {
+      -webkit-transform: translateY(-105%);
+      transform: translateY(-105%);
+    }
+
+    37.5% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+      }
+  
+    50% {
+      -webkit-transform: translateY(-205%);
+      transform: translateY(-205%);
+    }
+  
+    62.5% {
+      -webkit-transform: translateY(-200%);
+      transform: translateY(-200%);
+    }
+  
+    75% {
+      -webkit-transform: translateY(-305%);
+      transform: translateY(-305%);
+    }
+  
+    87.5% {
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%);
+    }
+
+    100% {
+        -webkit-transform: translateY(-410%);
+        transform: translateY(-410%);
+      }
+  
+  }
+  
