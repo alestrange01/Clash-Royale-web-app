@@ -77,7 +77,7 @@ function onPlayerJson(json){
 
     //mostro i dati della carta presi dal DB
     const cardID = json.player_info.currentFavouriteCard.id;
-    fetch("/get_card_info?q="+cardID).then(response => response.json()).then(onCardJson);
+    fetch("/get_card_info?card_id="+cardID).then(response => response.json()).then(onCardJson);
 
 
 

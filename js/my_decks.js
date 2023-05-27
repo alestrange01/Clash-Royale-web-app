@@ -17,7 +17,7 @@ function onDeckJson(jsondecks, jsoncards) {
             const title = document.createElement('h1');
             title.textContent = decodeURIComponent(deck.title.replace(/\+/g, ' '));
             const imgedit = document.createElement('img');
-            imgedit.src = "images/edit.svg";
+            imgedit.src = "/assets/edit.svg";
             imgedit.classList.add("edit-icon");
             imgedit.addEventListener('click', openModalEdit);
             dvititle.appendChild(title);
@@ -44,7 +44,7 @@ function onDeckJson(jsondecks, jsoncards) {
             const button = document.createElement("button");
             button.classList.add("bin-button");
             const img = document.createElement("img");
-            img.src = "images/bin.svg";
+            img.src = "/assets/bin.svg";
             img.classList.add("icon"); 
             button.appendChild(img);
             button.addEventListener('click', openModalDelete);
@@ -66,7 +66,7 @@ function editDeckName(event){
         document.querySelector("#error-message").classList.remove("hidden");
         return;
     }
-    fetch('edit_deck.php?deckid='+ encodeURIComponent(deckid) + '&deckname=' + encodeURIComponent(deckname))
+    fetch('/edit_deck/'+ encodeURIComponent(deckid) + '/' + encodeURIComponent(deckname))
     .then(response => response.json())
     .then(onEditJson);
 }
@@ -104,7 +104,7 @@ function onDeleteJson(json){
 
 function deleteDeck(event){
     event.stopPropagation();
-    fetch('delete_deck.php?deckid='+ encodeURIComponent(deckid))
+    fetch('/delete_deck/'+ encodeURIComponent(deckid))
     .then(response => response.json())
     .then(onDeleteJson);
 }
@@ -233,10 +233,10 @@ function chiudiModale(event) {
 
 let deckid = 0;
 
-fetch('get_cards.php')
+fetch('/get_cards')
   .then(response => response.json())
   .then(cards => {
-    fetch('get_user_decks.php')
+    fetch('/get_user_decks')
       .then(response => response.json())
       .then(decks=> {
         onDeckJson(decks, cards);

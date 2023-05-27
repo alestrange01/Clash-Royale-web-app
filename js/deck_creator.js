@@ -173,7 +173,7 @@ function modalInfo(event){
 
 
     const cardID = event.currentTarget.parentNode.dataset.id;
-    fetch("get_card_info.php?q="+cardID)
+    fetch("/get_card_info?card_id="+cardID)
     .then(response => response.json())
     .then(onCardJson);
 
@@ -187,7 +187,7 @@ function onCardJson(json){
     const cardCost = document.createElement("span");
     cardCost.textContent = "Cost: "+json.cost;
     const elixir = document.createElement("img");
-    elixir.src = "images/elixir.webp";
+    elixir.src = "/assets/elixir.webp";
     elixir.classList.add("elixir");
     cardCost.appendChild(elixir);
     cardInfo.appendChild(cardCost);
@@ -451,6 +451,7 @@ function visualizeDeck(event){
 
 function saveDeck(event){
     event.stopPropagation();
+    const token = document.head.querySelector('meta[name="csrf-token"]').content;
     
     const deckname = document.querySelector("#deck-name").value;
     if(deckname.length == 0){
@@ -465,12 +466,12 @@ function saveDeck(event){
     for (const img of imgs) {
         ids.push(encodeURIComponent(img.dataset.id));
     }
-    const json = JSON.stringify(ids);
+    const json = JSON.stringify(ids); 
     console.log(json);
     const formdata = new FormData();
     formdata.append("title", encodeURIComponent(deckname));
     formdata.append("cards", json);
-    fetch("save_deck.php", {method: "post", body: formdata}).then(onResponse).then(onSaveJson);
+    fetch("/save_deck", {method: "post", body: formdata, headers: {'X-CSRF-TOKEN': token}}).then(onResponse).then(onSaveJson);
 }
 
 function onSaveJson(json){
@@ -497,16 +498,12 @@ function onSaveJson(json){
 
 
 
-/* fetch('get_cards.php').then(response => response.json())
-.then(json => {
-    onJsonCard(json);
-    orderCards(json);}
-); */
-fetch('images/card.json').then(response => response.json())
+fetch('/get_cards').then(response => response.json())
 .then(json => {
     onJsonCard(json);
     orderCards(json);}
 );
+
 
 const body = document.querySelector("body");
 const album_view = document.querySelector("#album-view");
