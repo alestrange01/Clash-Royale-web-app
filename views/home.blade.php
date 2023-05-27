@@ -7,14 +7,14 @@
         <link rel="stylesheet" href='{{ URL::to("css/navbar.css") }}'>
         <link rel="stylesheet" href='{{ URL::to("css/footer.css") }}'>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-        <script src='{{ URL::to("../js/burger-menu.js") }}' defer></script>
+        <script src='{{ URL::to("js/burger-menu.js") }}' defer></script>
     </head>
 
     <body>
                 
         <nav id="navigation-bar">
             <div id="logodiv">
-                <img src="assets/crown.png" alt="logo" id="logo">	
+                <img src="{{ URL::to('assets/crown.png') }}" alt="logo" id="logo">	
                 <h1 id="logotitle">StrangeRoyale</h1>
                 <p id="logosubtitle">play, have fun, compete</p>
             </div>
@@ -40,12 +40,12 @@
             </label>
         </div>  
         <div id="burger-menu-links">
-            <a href="/home"><img src="assets/home.svg" alt=""></a>
-            <a href="/deck_creator"><img src="assets/deck_creator.svg" alt=""></a>
-            <a href="/players"><img src="assets/players.svg" alt=""></a>
-            <a href="/clans"><img src="assets/clans.svg" alt=""></a>
-            <a href="/login"><img src="assets/login.svg" alt=""></a>
-            <a href="/signup"><img src="assets/signup.svg" alt=""></a>
+            <a href="/home"><img src="{{ URL::to('assets/home.svg') }}" alt=""></a>
+            <a href="/deck_creator"><img src="{{ URL::to('assets/deck_creator.svg') }}" alt=""></a>
+            <a href="/players"><img src="{{ URL::to('assets/players.svg') }}" alt=""></a>
+            <a href="/clans"><img src="{{ URL::to('assets/clans.svg') }}" alt=""></a>
+            <a href="/login"><img src="{{ URL::to('assets/login.svg') }}" alt=""></a>
+            <a href="/signup"><img src="{{ URL::to('assets/signup.svg') }}" alt=""></a>
         </div>
 
         <article id="menu">
@@ -56,7 +56,7 @@
                     Qui puoi trovare tutto ciò che ti serve per creare il tuo deck personalizzato, consultare le informazioni
                     sulle carte, i giocatori e i clan.
                 </div>
-                <img src="assets/stemmatrasp.png">
+                <img src="{{ URL::to('assets/stemmatrasp.png') }}">
             </div>
             <button class="registration"> <a href='/signup'> Join the Community </a></button>  
             <div class='menu-element'>
@@ -65,7 +65,7 @@
                     Potrai condividere le tue creazioni e ricevere feedback dai membri della community 
                     Scopri tutto ciò che c'è da sapere su Clash Royale e divertiti a giocare come mai prima d'ora!
                 </div>
-                <img src="assets/War_Shield.webp">
+                <img src="{{ URL::to('assets/War_Shield.webp') }}">
             </div>
 
         </article>

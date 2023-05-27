@@ -102,7 +102,7 @@ class HomeController extends BaseController
 
 
     public function get_card_info(){
-        $card_id = Request::get('q');
+        $card_id = Request::get('card_id');
         $card = Card::find($card_id);
         return json_encode(array('id' => $card->id,
                                 'name' => $card->Name,
@@ -114,8 +114,6 @@ class HomeController extends BaseController
                                 'spawn_death_damage' => $card->Spawn_Death_Damage, 
                                 'attack_range' => $card->Attack_Range,
                                 'spawn_count' => $card->Spawn_Count));
-
-
     }
 
 }

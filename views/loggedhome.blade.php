@@ -2,23 +2,22 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/home.css"/>
         <title>StrangeRoyale</title>
-        <link rel="stylesheet" href="css/player_clan_stats.css"/>
-        <link rel="stylesheet" href="css/navbar.css"/>
-        <link rel="stylesheet" href="css/footer.css"/>
-        <link rel="stylesheet" href="css/loading.css"/>
+        <link rel="stylesheet" href="{{ URL::to('css/home.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::to('css/player_clan_stats.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::to('css/navbar.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::to('css/footer.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::to('css/loading.css') }}"/>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-        <script src="js/onPlayerJson.js" defer="true"></script>
-        <script src="js/loggedhome.js" defer="true"></script>
-        <script src="js/burger-menu.js" defer="true"></script>
-       
+        <script src="{{ URL::to('js/onPlayerJson.js') }}" defer="true"></script>
+        <script src="{{ URL::to('js/loggedhome.js') }}" defer="true"></script>
+        <script src="{{ URL::to('js/burger-menu.js') }}" defer="true"></script>
     </head>
 
     <body class="background">
         <nav id="navigation-bar">
             <div id="logodiv">
-                <img src="assets/crown.png" alt="logo" id="logo">	
+                <img src="{{ URL::to('assets/crown.png') }}" alt="logo" id="logo">	
                 <h1 id="logotitle">StrangeRoyale</h1>
                 <p id="logosubtitle">play, have fun, compete</p>
             </div>
@@ -45,12 +44,12 @@
             </label>
         </div>  
         <div id="burger-menu-links">
-            <a href="/home"><img src="assets/home.svg" alt=""></a>
-            <a href="/deck_creator"><img src="assets/deck_creator.svg" alt=""></a>
-            <a href="/players"><img src="assets/players.svg" alt=""></a>
-            <a href="/clans"><img src="assets/clans.svg" alt=""></a>
-            <a href="/my_decks"><img src="assets/my_decks.svg" alt=""></a>
-            <a href="logout"><img src="assets/logout.svg" alt=""></a>
+            <a href="/home"><img src="{{ URL::to('assets/home.svg') }}" alt=""></a>
+            <a href="/deck_creator"><img src="{{ URL::to('assets/deck_creator.svg') }}" alt=""></a>
+            <a href="/players"><img src="{{ URL::to('assets/players.svg') }}" alt=""></a>
+            <a href="/clans"><img src="{{ URL::to('assets/clans.svg') }}" alt=""></a>
+            <a href="/my_decks"><img src="{{ URL::to('assets/my_decks.svg') }}" alt=""></a>
+            <a href="logout"><img src="{{ URL::to('assets/logout.svg') }}" alt=""></a>
         </div>
 
         <div id="loading">
@@ -69,13 +68,13 @@
                 <div id="name" class="info"></div>
                 <div id="tag" class="info"></div>
                 <div id="level" class="info"></div>
-                <div id="trophy" class="info"><span></span><img src="assets/trophy.webp" alt="" class="trophy"></div>
+                <div id="trophy" class="info"><span></span><img src="{{ URL::to('assets/trophy.webp') }}" alt="" class="trophy"></div>
                 <div id="clan" class="info"></div>  
             </div>
 
             <div id="stats">
                 <div id="arena" class="info"></div>
-                <div id="maxTrophies" class="info"><span></span><img src="assets/trophy.webp" alt="" class="trophy"></div>
+                <div id="maxTrophies" class="info"><span></span><img src="{{ URL::to('assets/trophy.webp') }}" alt="" class="trophy"></div>
                 <div id="starPoints" class="info"></div>
                 <div id="expPoints" class="info"></div>
                 <div id="totalExpPoints" class="info"></div>

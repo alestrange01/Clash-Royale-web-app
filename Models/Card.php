@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 
 class Card extends Model
 {
@@ -10,6 +12,6 @@ class Card extends Model
     public $timestamps = false;
 
     public function decks() {
-        return $this->belongsToMany("Deck", 'Composizione', 'deck', 'card'); 
+        return $this->belongsToMany(Deck::class);
     }
 }

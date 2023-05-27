@@ -31,5 +31,11 @@ Route::get('get_card_info', 'App\Http\Controllers\HomeController@get_card_info')
 Route::get('clans/{player_clan_tag?}', 'App\Http\Controllers\PlayersClansController@clans');
 Route::post('get_clan', 'App\Http\Controllers\PlayersClansController@get_clan');
 
-
+Route::get('deck_creator', 'App\Http\Controllers\DeckController@deck_creator');
+Route::get('get_cards', 'App\Http\Controllers\DeckController@get_cards');
+Route::post('save_deck', 'App\Http\Controllers\DeckController@save_deck');
+Route::get('my_decks', 'App\Http\Controllers\DeckController@my_decks');
+Route::get('get_user_decks', 'App\Http\Controllers\DeckController@get_user_decks');
+Route::get('edit_deck/{deck_id}/{deck_name}', 'App\Http\Controllers\DeckController@edit_deck');
+Route::get('delete_deck/{deck_id}', 'App\Http\Controllers\DeckController@delete_deck');
 

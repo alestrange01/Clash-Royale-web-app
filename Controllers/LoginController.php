@@ -29,56 +29,16 @@ class LoginController extends BaseController
                     Session::put('user_tag', $user->player_tag);
                     Session::put('username', $user->username);
                     return redirect('loggedhome')->with('user', $user);
-                    
                 }
-                else {
-                    $$error= 'Password sbagliata';
-                }
-            } else {
-                $error['email_tag'] = 'Email/player_tag non trovato'; 
-            }
-        } else {
-            $error['email_tag'] = "Inserisci email/player tag e password";
+            } 
+            // Se l'utente non è loggato mando un messaggio di errore
+            $error = "Email/player tag e/o password non corrispondono";
+        } else if(request()->has('email_tag') || request()->has('password')){
+            $error = "Inserisci email/player tag e password";
         }
-        if(count($error) == 0){
-            
-        } else {
-            return redirect('login')->withInput()->withErrors($error);
-        }
-
-
+        return redirect('login')->withInput()->withErrors($error);
     }
 
-    public function do_login2(){
-        if(Session::has('user_id')){
-            return redirect('loggedhome');
-        }
-        $email_tag = Request::post('email_tag');
-        $password = Request::post('password');
-
-        if(!empty($email_tag) && !empty($password)){
-            $user = User::where('email', $email_tag)->orwhere('player_tag', $email_tag)->first();
-            if(!$user){
-                $error['email_tag'] = 'Email/player_tag non trovato'; 
-            } else {
-                if(!password_verify($password, $user->password)){
-                    $error= 'Password sbagliata';
-                }
-            }
-        } else {
-            $error['email_tag'] = "Inserisci email/player tag e password";
-        }
-        if(count($error) == 0){
-            Session::put('user_id', $user->id);
-            Session::put('user_tag', $user->player_tag);
-            Session::put('username', $user->username);
-            return redirect('loggedhome')->with('user', $user);
-        } else {
-            return redirect('login')->withInput()->withErrors($error);
-        }
-
-
-    }
 
     public function signup()
     {

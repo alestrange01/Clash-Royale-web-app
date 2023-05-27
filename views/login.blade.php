@@ -27,12 +27,14 @@
                     <input type="password" class="input" name='password' placeholder="Password">
                 </div>
                 
-                @if(isset($error))
-                <div class="errors">
-                    <div class="error"><img src="{{ URL::to('/assets/cross.png') }}"/>
-                    <span>{{ $error }}</span></div>
-                </div>
-            @endif
+                @foreach ($errors->all() as $error)
+                    <div class="errors">
+                        <div class="error">
+                            <img src='assets/cross.png'/>
+                            <span>{{ $error }}</span>
+                        </div>
+                    </div>
+                @endforeach
 
                 <div class="errors">
                     <div id="error_form" class='error hidden'><img src='assets/cross.png'/><span>Inserisci email/player tag e password</span></div>

@@ -9,6 +9,6 @@ class User extends Model
     public $timestamps = false;
 
     public function decks() {
-        return $this->hasMany("Deck", "user");
+        return $this->hasMany(Deck::class, 'user');
     }
 }
