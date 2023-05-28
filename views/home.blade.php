@@ -61,8 +61,7 @@
             <button class="registration"> <a href='/signup'> Join the Community </a></button>  
             <div class='menu-element'>
                 <div class='text'>
-                    Quì avrai la possibilità di vedere i deck creati dagli altri utenti e interagire con loro. 
-                    Potrai condividere le tue creazioni e ricevere feedback dai membri della community 
+                    Quì avrai la possibilità di salvare le tue creazioni e modificarle a tuo piacimento. 
                     Scopri tutto ciò che c'è da sapere su Clash Royale e divertiti a giocare come mai prima d'ora!
                 </div>
                 <img src="{{ URL::to('assets/War_Shield.webp') }}">

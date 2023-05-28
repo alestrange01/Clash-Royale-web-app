@@ -45,7 +45,7 @@
                 <p>Not a member? <a href="/signup">Sign up</a></p>
             </form>
             <div class="form-section">
-                <a href="">Forgot password?</a> 
+                <a href="https://www.youtube.com/shorts/ZRF2071HZRU">Forgot password?</a> 
             </div>
         </div>
 

@@ -45,40 +45,11 @@ function onJsonCard(json){
 
 
     console.log("taken: " + taken);
-    if(document.querySelector('input[type="radio"][value="up"]:checked')){
-        // console.log("up");
-        const ascendingcards = ascendingjson.items;
-        console.log(ascendingcards);
-        results = ascendingcards.slice().filter(card => !taken.includes(card.id));
+    if(document.querySelector('input[type="radio"][name="order"]:checked')){
+        const cards = json.items;
+        console.log(cards);
+        results = cards.slice().filter(card => !taken.includes(card.id));
     }
-    else if(document.querySelector('input[type="radio"][value="down"]:checked')){
-        // console.log("down");
-        const descendingcards = descendingjson.items;
-        results = descendingcards.slice().filter(card => !taken.includes(card.id));
-    }else if(document.querySelector('input[type="radio"][value="common"]:checked')){
-        // console.log("common");
-        const commoncards = commonjson.items;
-        results = commoncards.slice().filter(card => !taken.includes(card.id));
-    }else if(document.querySelector('input[type="radio"][value="rare"]:checked')){
-        // console.log("rare");
-        const rarecards = rarejson.items;
-        results = rarecards.slice().filter(card => !taken.includes(card.id));
-    }else if(document.querySelector('input[type="radio"][value="epic"]:checked')){
-        // console.log("epic");
-        const epiccards = epicjson.items;
-        results = epiccards.slice().filter(card => !taken.includes(card.id));
-    }else if(document.querySelector('input[type="radio"][value="legendary"]:checked')){
-        // console.log("legendary");
-        const legendarycards = legendaryjson.items;
-        results = legendarycards.slice().filter(card => !taken.includes(card.id));
-    }else if(document.querySelector('input[type="radio"][value="hero"]:checked')){
-        // console.log("hero");
-        const herocards = herojson.items;
-        results = herocards.slice().filter(card => !taken.includes(card.id));
-    }
-
-
-
 
     console.log("results: " + results.length);
 
@@ -130,7 +101,9 @@ function onJsonCard(json){
         
 
         // img.addEventListener("click", selection);
-        blocco.addEventListener("click", selection);
+        if(taken.length !== MAX){
+            blocco.addEventListener("click", selection);
+        }
     
         blocco.appendChild(img);
         blocco.appendChild(name);
@@ -349,7 +322,7 @@ function deselection(event){
         hero = false;
     }
 
-    taken.splice(taken.indexOf(immagine.dataset.id),1);
+    taken.splice(taken.indexOf(parseInt(immagine.dataset.id)),1);
     if(taken.length === MAX-1){
         // const imgs = document.querySelectorAll("#album-view img");
         // for (const img of imgs) {
@@ -502,7 +475,19 @@ fetch('/get_cards').then(response => response.json())
 .then(json => {
     onJsonCard(json);
     orderCards(json);}
-);
+).catch(error => {
+    console.log("Controllare il token");
+    const error_message_div = document.createElement("div");
+    const error_message = document.createElement("h1");
+    error_message.textContent = "Token non valido";
+    const img_error = document.createElement("img");
+    img_error.src = "images/cry.png";
+    error_message_div.classList.add("error_token");
+    error_message_div.appendChild(error_message);
+    error_message_div.appendChild(img_error);
+    document.querySelector("#album-view").appendChild(error_message_div);
+    document.querySelector("#loading").classList.add("hidden");
+  });
 
 
 const body = document.querySelector("body");
@@ -537,8 +522,18 @@ for (const r of radio) {
 function onRadioClick(event){
     if(event.currentTarget.value == "up"){
         onJsonCard(ascendingjson);
-    }else{
+    }else if(event.currentTarget.value == "down"){
         onJsonCard(descendingjson);
+    }else if(event.currentTarget.value == "common"){
+        onJsonCard(commonjson);
+    }else if(event.currentTarget.value == "rare"){
+        onJsonCard(rarejson);
+    }else if(event.currentTarget.value == "epic"){
+        onJsonCard(epicjson);
+    }else if(event.currentTarget.value == "legendary"){
+        onJsonCard(legendaryjson);
+    }else if(event.currentTarget.value == "hero"){
+        onJsonCard(herojson);
     }
 }
 

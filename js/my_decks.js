@@ -241,6 +241,18 @@ fetch('/get_cards')
       .then(decks=> {
         onDeckJson(decks, cards);
       });
+  }).catch(error => {
+    console.log("Controllare il token");
+    const error_message_div = document.createElement("div");
+    const error_message = document.createElement("h1");
+    error_message.textContent = "Token non valido";
+    const img_error = document.createElement("img");
+    img_error.src = "/assets/cry.png";
+    error_message_div.classList.add("error_token");
+    error_message_div.appendChild(error_message);
+    error_message_div.appendChild(img_error);
+    body.insertBefore(error_message_div, document.querySelector("#loading"));   
+    document.querySelector("#loading").classList.add("hidden");
   });
 
 const modale = document.querySelector('#modale');
