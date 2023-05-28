@@ -15,19 +15,7 @@
     </head>
 
     <body class="background">
-        <nav id="navigation-bar">
-            <div id="logodiv">
-                <img src="{{ URL::to('assets/crown.png') }}" alt="logo" id="logo">	
-                <h1 id="logotitle">StrangeRoyale</h1>
-                <p id="logosubtitle">play, have fun, compete</p>
-            </div>
-            <a href='/home'><u>Home</u></a>
-            <a href='/deck_creator'>Deck Creator</a>
-            <a href='/players'>Players</a>
-            <a href='/clans'>Clans</a>
-            <a href='/my_decks'>My decks</a>
-            <button><a href='/logout'> Log Out </a></button>
-        </nav>
+        @include('navbar')
         
         <header id="sopra">
             <div id="overlay"> </div>
@@ -35,22 +23,7 @@
             <p id="benvenuto">Benvenuto {{ $user->username }} su StrangeRoyale!</p>
         </header>
 
-        <div id="burger-menu">
-            <label for="burger">
-                <input type="checkbox" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-        </div>  
-        <div id="burger-menu-links">
-            <a href="/home"><img src="{{ URL::to('assets/home.svg') }}" alt=""></a>
-            <a href="/deck_creator"><img src="{{ URL::to('assets/deck_creator.svg') }}" alt=""></a>
-            <a href="/players"><img src="{{ URL::to('assets/players.svg') }}" alt=""></a>
-            <a href="/clans"><img src="{{ URL::to('assets/clans.svg') }}" alt=""></a>
-            <a href="/my_decks"><img src="{{ URL::to('assets/my_decks.svg') }}" alt=""></a>
-            <a href="logout"><img src="{{ URL::to('assets/logout.svg') }}" alt=""></a>
-        </div>
+        @include('burger-menu')
 
         <div id="loading">
             <span>loading</span>

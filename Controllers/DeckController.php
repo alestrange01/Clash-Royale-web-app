@@ -15,12 +15,8 @@ class DeckController extends BaseController
     public function deck_creator(){
         $playersClansController = new PlayersClansController();
         $links = $playersClansController->get_navbar();
-        return view('deck_creator')->with('link1', $links['link1'])
-                                   ->with('text1', $links['text1'])
-                                   ->with('img1', $links['img1'])
-                                   ->with('link2', $links['link2'])
-                                   ->with('text2', $links['text2'])
-                                   ->with('img2', $links['img2']);
+        return view('deck_creator')->with('links', $links)
+                                      ->with('u', 'deck_creator');
     }
 
     public function get_cards(){
@@ -88,12 +84,8 @@ class DeckController extends BaseController
         $user = User::find(Session::get('user_id'));
         $playersClansController = new PlayersClansController();
         $links = $playersClansController->get_navbar();
-        return view('my_decks')->with('link1', $links['link1'])
-                               ->with('text1', $links['text1'])
-                               ->with('img1', $links['img1'])
-                               ->with('link2', $links['link2'])
-                               ->with('text2', $links['text2'])
-                               ->with('img2', $links['img2'])
+        return view('my_decks')->with('links', $links)
+                               ->with('u', 'my_decks')
                                ->with('user', $user);
     }
 

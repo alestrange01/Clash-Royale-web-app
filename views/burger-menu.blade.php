@@ -12,6 +12,6 @@
     <a href="/players"><img src="{{ URL::to('assets/players.svg') }}" alt=""></a>
     <a href="/clans"><img src="{{ URL::to('assets/clans.svg') }}" alt=""></a>
     <!-- $img1 = /assets/signup.svg -->
-    <a href="{{$link1}}"><img src="{{ URL::to($img1) }}" alt=""></a>
-    <a href="{{$link2}}"><img src="{{ URL::to($img2) }}" alt=""></a>
+    <a href="{{$links['link1']}}"><img src="{{ URL::to($links['img1']) }}" alt=""></a>
+    <a href="{{$links['link2']}}"><img src="{{ URL::to($links['img2']) }}" alt=""></a>
 </div>

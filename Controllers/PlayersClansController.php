@@ -37,23 +37,15 @@ class PlayersClansController extends BaseController
     }
     public function players($clan_player_tag=""){
         $links = $this->get_navbar();
-        return view('players')->with('link1', $links['link1'])
-                              ->with('text1', $links['text1'])
-                              ->with('img1', $links['img1'])
-                              ->with('link2', $links['link2'])
-                              ->with('text2', $links['text2'])
-                              ->with('img2', $links['img2'])
+        return view('players')->with('links', $links)
+                              ->with('u', 'players')
                               ->with('clan_player_tag', $clan_player_tag);
     }
 
     public function clans($player_clan_tag=""){
         $links = $this->get_navbar();
-        return view('clans')->with('link1', $links['link1'])
-                            ->with('text1', $links['text1'])
-                            ->with('img1', $links['img1'])
-                            ->with('link2', $links['link2'])
-                            ->with('text2', $links['text2'])
-                            ->with('img2', $links['img2'])
+        return view('clans')->with('links', $links)
+                            ->with('u', 'clans')
                             ->with('player_clan_tag', $player_clan_tag);
     }
 

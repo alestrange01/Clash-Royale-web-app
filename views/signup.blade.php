@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>StrangeRoyaleSignUp</title>
+        <title>StrangeRoyale Sign Up</title>
         <script>
             const CHECK_PLAYER_TAG_URL = "{{ URL::to('signup/check/player_tag') }}";
             const CHECK_EMAIL_URL = "{{ URL::to('signup/check/email') }}";

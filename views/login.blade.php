@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>StrangeRoyaleSingIn</title>
+        <title>StrangeRoyale Log In</title>
         <link rel="stylesheet" href='{{ URL::to("css/signup.css") }}'>
         <link rel="stylesheet" href='{{ URL::to("css/footer.css") }}'>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">

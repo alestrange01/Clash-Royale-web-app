@@ -6,26 +6,35 @@ use Request;
 use Session;
 use App\Models\User;
 use App\Models\Card;
+use App\Http\Controllers\PlayersClansController;
 
 
 class HomeController extends BaseController
 {
     public function home()
     {
+        $playersClansController = new PlayersClansController();
+        $links = $playersClansController->get_navbar();
         if(Session::has('user_id')){
-            return redirect('loggedhome');
+            return redirect('loggedhome')->with('links', $links)
+                                         ->with('u', 'home');
         }
-        return view('home');
+        return view('home')->with('links', $links)
+                           ->with('u', 'home');
 
     }
 
     public function loggedhome()
     {
+        $playersClansController = new PlayersClansController();
+        $links = $playersClansController->get_navbar();
         if(!Session::has('user_id')){
             return redirect('login');
         }
         $user = User::find(Session::get('user_id'));
-        return view('loggedhome')->with('user', $user);
+        return view('loggedhome')->with('user', $user)
+                                 ->with('links', $links)
+                                 ->with('u', 'home');
     }
 
 
