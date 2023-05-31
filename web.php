@@ -36,6 +36,7 @@ Route::get('get_cards', 'App\Http\Controllers\DeckController@get_cards');
 Route::post('save_deck', 'App\Http\Controllers\DeckController@save_deck');
 Route::get('my_decks', 'App\Http\Controllers\DeckController@my_decks');
 Route::get('get_user_decks', 'App\Http\Controllers\DeckController@get_user_decks');
+Route::get('get_user_decks2', 'App\Http\Controllers\DeckController@get_user_decks2');
 Route::get('edit_deck/{deck_id}/{deck_name}', 'App\Http\Controllers\DeckController@edit_deck');
 Route::get('delete_deck/{deck_id}', 'App\Http\Controllers\DeckController@delete_deck');
 

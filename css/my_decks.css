@@ -15,6 +15,7 @@
 
 .deck-block div img{
     width: 25%;
+    cursor: pointer;
 }
 
 .deck-block h1{
@@ -34,7 +35,8 @@
 
 
 
-.bin-button {
+.bin-button,
+.heart-button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -66,7 +68,8 @@
   }
   
   
-  .bin-button:hover {
+  .bin-button:hover,
+  .heart-button:hover {
     width: 140px;
     border-radius: 50px;
     -webkit-transition-duration: .3s;
@@ -75,6 +78,10 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .heart-button:hover{
+    background-color: rgb(90, 183, 85);
   }
   
   .bin-button:hover .icon {
@@ -85,8 +92,17 @@
         -ms-transform: translateY(42%);
             transform: translateY(42%);
   }
+  .heart-button:hover .icon{
+    width: 50px;
+    -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+    -webkit-transform: translateY(35%);
+        -ms-transform: translateY(35%);
+            transform: translateY(35%);
+  }
   
-  .bin-button::before {
+  .bin-button::before,
+  .heart-button::before {
     position: absolute;
     top: -22px;
     content: "Delete";
@@ -95,8 +111,13 @@
             transition-duration: .3s;
     font-size: 2px;
   }
+
+    .heart-button::before{
+        content: "Save";
+    }
   
-  .bin-button:hover::before {
+  .bin-button:hover::before,
+  .heart-button:hover::before {
     font-size: 13px;
     opacity: 1;
     -webkit-transform: translateY(30px);

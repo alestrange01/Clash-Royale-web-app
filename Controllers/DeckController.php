@@ -108,6 +108,41 @@ class DeckController extends BaseController
         return json_encode($decks_array);
     }
 
+
+    public function get_user_decks2(){
+        if(!Session::has('user_id')){
+            return redirect('login');
+        }
+        $userid = Session::get('user_id');
+        $user = User::find($userid);
+        $decks = $user->decks;
+        $decks_array = array('user_status' => count($decks) === 0 ? 'empty' : 'ok', 'decks' => array());
+        foreach($decks as $deck){
+            $cardIDs = $deck->cards->pluck('id')->toArray();
+            $deck_array = array('id' => $deck->id, 'title' => $deck->title, 'cards' => $cardIDs);
+            $decks_array['decks'][] = $deck_array;
+        }
+        $users = User::all()->where('id', '!=', $userid); 
+        $users_array = array();
+        foreach($users as $user){
+            $user_array = array('id' => $user->id, 'name' => $user->name, 'decks' => array());
+            $decks = $user->decks;
+            if (count($decks) === 0){
+                $user_array['decks'] = "empty";
+            } else {
+                foreach($decks as $deck){
+                    $cardIDs = $deck->cards->pluck('id')->toArray();
+                    $deck_array = array('id' => $deck->id, 'title' => $deck->title, 'cards' => $cardIDs);
+                    $user_array['decks'][] = $deck_array;
+                }
+            }
+            $users_array[] = $user_array;   
+        }
+        $decks_array['users'] = $users_array;
+        return json_encode($decks_array);
+
+    }
+
     public function edit_deck($deck_id, $deck_name){
         if(!Session::has('user_id')){
             return redirect('login');
