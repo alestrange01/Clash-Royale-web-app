@@ -29,6 +29,7 @@
 
         <div class="container-input">
         <form>
+            @csrf
             <input type="submit" id="submit">
             <input type="text" placeholder="Search Clan" name="clan_tag" id="input" value="{{ $player_clan_tag }}">
         </form>

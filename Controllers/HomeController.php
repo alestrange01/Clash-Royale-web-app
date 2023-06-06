@@ -82,8 +82,6 @@ class HomeController extends BaseController
         //Prendo le info delle upcoming chests tramite le API di Clash Royale
         $url = "https://api.clashroyale.com/v1/players/". urlencode($user_tag) . "/upcomingchests";
         $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Accept: application/json',

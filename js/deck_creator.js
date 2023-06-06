@@ -481,7 +481,7 @@ fetch('/get_cards').then(response => response.json())
     const error_message = document.createElement("h1");
     error_message.textContent = "Token non valido";
     const img_error = document.createElement("img");
-    img_error.src = "images/cry.png";
+    img_error.src = "/assets/cry.png";
     error_message_div.classList.add("error_token");
     error_message_div.appendChild(error_message);
     error_message_div.appendChild(img_error);

@@ -2,7 +2,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>StrangeRoyale</title>
         <link rel="stylesheet" href="{{ URL::to('css/home.css') }}"/>
         <link rel="stylesheet" href="{{ URL::to('css/player_clan_stats.css') }}"/>
@@ -29,6 +28,7 @@
 
         <div class="container-input">
         <form>
+            @csrf
             <input type="submit" id="submit">
             <input type="text" placeholder="Search Player" name="player_tag" id="input" value= "{{ $clan_player_tag }}">
         </form>
